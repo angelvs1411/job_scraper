@@ -4,7 +4,7 @@ The purpose of this python script is to assist with the job application process 
 
 This script utilizes chrome as the webdriver but feel free to edit to use other broswers.
 
-HOW TO USE
+INSTALLATION
 
 If you don’t already have Python installed on your machine, run the following commands in your terminal.
 
@@ -30,7 +30,7 @@ choco install python python -m pip install -U pip
 
 Download the latest git for windows version at https://gitforwindows.org/.
 
-Execution:
+EXECUTION
 
 Run the following commands in your terminal.
 
