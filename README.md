@@ -11,15 +11,21 @@ If you don’t already have Python installed on your machine, run the following 
 Mac:
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
+
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
 brew install python
+
 brew install git
 
 Linux:
 
 suduo apt-get update
+
 sudo apt install python3
+
 sudo apt install python3-pip
+
 sudo apt-get install git-all
 
 Windows:
