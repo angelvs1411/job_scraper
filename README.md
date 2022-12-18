@@ -38,16 +38,17 @@ Download the latest git for windows version at https://gitforwindows.org/.
 
 EXECUTION
 
-Run the following commands in your terminal.
+Run the following command in your terminal:
 
 git clone https://github.com/angelvs1411/job_scraper
 
-open job_scraper.py and edit the chromedriver path and the path to download the csv file.
+Open job_scraper.py and edit the chromedriver path and the path to download the csv file.
 
-navigate to the scripts directory and run the command below.
+Run the commands below:
+
+pip3 install -r requirements.txt
 
 python3 job_scraper.py
-
 
 
 
