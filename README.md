@@ -6,7 +6,7 @@ This script utilizes chrome as the webdriver but feel free to edit to use other 
 
 INSTALLATION
 
-If you don’t already have Python installed on your machine, run the following commands in your terminal.
+If you don’t already have Python or Git installed on your machine, run the following commands in your terminal.
 
 Mac:
 
