@@ -40,7 +40,7 @@ while True:
     job_card_dates = soup.find_all('span', class_='date')
 
 
-    if len(job_card_titles) > 0:      #Find a way to consolidate these for loops
+    if len(job_card_titles) > 0:      
         for job_card_title in job_card_titles:
             title = job_card_title.find('span')
             titles.append(title.text)
