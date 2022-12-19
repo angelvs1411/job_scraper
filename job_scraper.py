@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import pandas as pd
 
@@ -25,6 +26,7 @@ while True:
     locations = []
     salaries = []
     dates = []
+    apply_links = []
     job_attributes = []
 
     driver.get(f'https://www.indeed.com/jobs?q={keywords}&l={loc}&sc=0kf%3Aexplvl({level}_LEVEL)%3B')
@@ -37,11 +39,21 @@ while True:
     job_card_salaries = soup.find_all('div', class_='attribute_snippet')
     job_card_dates = soup.find_all('span', class_='date')
 
-    if len(job_card_titles) > 0:      
+
+    if len(job_card_titles) > 0:      #Find a way to consolidate these for loops
         for job_card_title in job_card_titles:
             title = job_card_title.find('span')
             titles.append(title.text)
-
+            title_link = job_card_title.find('a', href=True)
+            title_link = title_link['href']
+            driver.get(f'https://indeed.com{title_link}')
+            html2 = driver.page_source
+            soup2 = BeautifulSoup(html2, 'html.parser')
+            full_link = soup2.find('div', class_='icl-u-lg-hide')
+            apply_link = full_link.find('a', href=True)
+            #link = apply_link['href']
+            apply_links.append(apply_link)
+            
         for job_card_company in job_card_companies:
             company = job_card_company.find('span')
             companies.append(company.text)
@@ -60,15 +72,15 @@ while True:
         job_attributes.append(locations)
         job_attributes.append(salaries)
         job_attributes.append(dates)
+        job_attributes.append(apply_links)
     
         df = pd.DataFrame(job_attributes).transpose()
-        df.columns = ['Title', 'Company', 'Location', 'Salary', 'Date Posted/Last Activity']
+        df.columns = ['Title', 'Company', 'Location', 'Salary', 'Date Posted/Last Activity', 'Apply Links']
     
-        df.to_csv('/Path/to/Download/jobs.csv', index=False)   # Change this (e.g., '/home/admin/Downloads/jobs.csv')
+        df.to_csv('/path/to/download/jobs.csv', index=False)   # Change this (e.g., '/home/admin/Downloads/jobs.csv')
         break
     
     else:
         print('No search results were found, try searching something else.')
         continue
-    
 
