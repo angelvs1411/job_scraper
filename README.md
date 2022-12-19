@@ -22,7 +22,7 @@ brew install git
 
 Linux:
 
-suduo apt-get update
+sudo apt-get update
 
 sudo apt install python3
 
