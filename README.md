@@ -12,7 +12,7 @@ If you don’t already have Python or Git installed on your machine, run the fol
 
 Mac:
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
