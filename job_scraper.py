@@ -50,8 +50,7 @@ while True:
             html2 = driver.page_source
             soup2 = BeautifulSoup(html2, 'html.parser')
             full_link = soup2.find('div', class_='icl-u-lg-hide')
-            apply_link = full_link.find('a', href=True)
-            #link = apply_link['href']
+            apply_link = full_link.find('a', href=True)                              
             apply_links.append(apply_link)
             
         for job_card_company in job_card_companies:
