@@ -78,6 +78,7 @@ while True:
         df.columns = ['Title', 'Company', 'Location', 'Salary', 'Date Posted/Last Activity', 'Apply Links']
     
         df.to_csv('/path/to/download/jobs.csv', index=False)   # Change this (e.g., '/home/admin/Downloads/jobs.csv')
+        driver.quit()
         break
     
     else:
