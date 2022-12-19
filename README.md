@@ -6,6 +6,8 @@ This script utilizes chrome as the webdriver but feel free to edit to use other 
 
 INSTALLATION
 
+You will need to install chromedriver, you can find the latest version at this link: https://chromedriver.chromium.org/getting-started
+
 If you don’t already have Python or Git installed on your machine, run the following commands in your terminal.
 
 Mac:
