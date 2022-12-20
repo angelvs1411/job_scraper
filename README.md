@@ -16,13 +16,17 @@ python -v
 
 git --version
 
-Other wise enter the commands below in your terminal depending on your OS:
+Other wise follow the instructions and enter the commands below in your terminal depending on your OS to install.
 
 Mac:
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+After homebrew is installed, run the command "ls -a" open the .profile or .zprofile file (whichever is present) and add this line to the bottom of the file:
+
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+Then run these commands:
 
 brew install python
 
