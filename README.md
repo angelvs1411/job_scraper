@@ -8,13 +8,15 @@ INSTALLATION
 
 You will need to install chromedriver, you can find the latest version at this link: https://chromedriver.chromium.org/getting-started
 
-If you don’t already have Python3 or Git installed on your machine, run the following commands in your terminal.
+If you don’t already have Python3 or Git on your machine, you'll need to install them as well.
 
 You can check if you have python/git installed and the versions with the following commands:
 
 python -v
 
 git --version
+
+Other wise enter the commands below in your terminal depending on your OS:
 
 Mac:
 
