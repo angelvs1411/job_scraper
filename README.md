@@ -22,12 +22,6 @@ Mac:
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-After homebrew is installed, run the command "ls -a" open the .profile or .zprofile file (whichever is present) and add this line to the bottom of the file:
-
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
-Then run these commands:
-
 brew install python
 
 brew install git
