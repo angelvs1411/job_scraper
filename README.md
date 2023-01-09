@@ -16,7 +16,7 @@ Run the following command in your terminal:
 
 git clone https://github.com/angelvs1411/job_scraper
 
-Open job_scraper.py and edit the chromedriver path and the path to download the csv file.
+Open job_scraper.py and edit the chromedriver path(line 8) and the path to download the csv file(line 79).
 
 Run the commands below:
 
