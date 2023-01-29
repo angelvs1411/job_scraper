@@ -1,6 +1,6 @@
 # job_scraper
 
-The purpose of this python script is to assist with the job application process that can be annoying and time consuming. When executed, the script will prompt the user for input about what job, location and experience level they are searching for. It will then use that input to search for jobs on indeed and export the search results to a csv file with the attributes "Title", "Company", "Salary", "Date Posted" and "Apply Link". (I'm aware the current code exports the entire html element for the "apply link" field. Currently in the process of adding logic to export just the link.)
+The purpose of this python script is to assist with the job application process that can be annoying and time consuming. When executed, the script will prompt the user for input about what job, location and experience level they are searching for. It will then use that input to search for jobs on indeed and export the search results to a csv file with the attributes "Title", "Company", "Salary", and "Date Posted". Currently in the process of adding logic to get the apply link.
 
 This script utilizes chrome as the webdriver but feel free to edit to use other broswers.
 
