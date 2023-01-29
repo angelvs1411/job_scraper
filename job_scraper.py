@@ -21,12 +21,6 @@ while True:
         else:
             break
 
-    titles = []
-    companies = []
-    locations = []
-    salaries = []
-    dates = []
-    apply_links = []
     job_attributes = []
 
     driver.get(f'https://www.indeed.com/jobs?q={keywords}&l={loc}&sc=0kf%3Aexplvl({level}_LEVEL)%3B')
@@ -41,40 +35,25 @@ while True:
 
 
     if len(job_card_titles) > 0:      
-        for job_card_title in job_card_titles:
-            title = job_card_title.find('span')
-            titles.append(title.text)
-            title_link = job_card_title.find('a', href=True)
-            title_link = title_link['href']
-            driver.get(f'https://indeed.com{title_link}')
-            html2 = driver.page_source
-            soup2 = BeautifulSoup(html2, 'html.parser')
-            full_link = soup2.find('div', class_='icl-u-lg-hide')
-            apply_link = full_link.find('a', href=True)                              
-            apply_links.append(apply_link)
-            
-        for job_card_company in job_card_companies:
-            company = job_card_company.find('span')
-            companies.append(company.text)
-    
-        for job_card_location in job_card_locations:
-            locations.append(job_card_location.text)
         
-        for job_card_salary in job_card_salaries:
-            salaries.append(job_card_salary.text)
+        titles = [job_card_title.find('span').text for job_card_title in job_card_titles]
         
-        for job_card_date in job_card_dates:
-            dates.append(job_card_date.text)
+        companies = [job_card_company.find('span').text for job_card_company in job_card_companies]
+        
+        locations = [job_card_location.text for job_card_location in job_card_locations]
+        
+        salaries = [job_card_salary.text for job_card_salary in job_card_salaries]
+        
+        dates = [job_card_date.text for job_card_date in job_card_dates]
     
         job_attributes.append(titles)
         job_attributes.append(companies)
         job_attributes.append(locations)
         job_attributes.append(salaries)
         job_attributes.append(dates)
-        job_attributes.append(apply_links)
     
         df = pd.DataFrame(job_attributes).transpose()
-        df.columns = ['Title', 'Company', 'Location', 'Salary', 'Date Posted/Last Activity', 'Apply Links']
+        df.columns = ['Title', 'Company', 'Location', 'Salary', 'Date Posted/Last Activity']
     
         df.to_csv('/path/to/download/jobs.csv', index=False)   # Change this (e.g., '/home/admin/Downloads/jobs.csv')
         driver.quit()
