@@ -21,8 +21,6 @@ while True:
         else:
             break
 
-    job_attributes = []
-
     driver.get(f'https://www.indeed.com/jobs?q={keywords}&l={loc}&sc=0kf%3Aexplvl({level}_LEVEL)%3B')
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
@@ -45,13 +43,9 @@ while True:
         salaries = [job_card_salary.text for job_card_salary in job_card_salaries]
         
         dates = [job_card_date.text for job_card_date in job_card_dates]
-    
-        job_attributes.append(titles)
-        job_attributes.append(companies)
-        job_attributes.append(locations)
-        job_attributes.append(salaries)
-        job_attributes.append(dates)
-    
+        
+        job_attributes = [titles, companies, locations, salaries, dates]
+        
         df = pd.DataFrame(job_attributes).transpose()
         df.columns = ['Title', 'Company', 'Location', 'Salary', 'Date Posted/Last Activity']
     
