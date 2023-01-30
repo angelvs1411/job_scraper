@@ -34,14 +34,10 @@ while True:
 
     if len(job_card_titles) > 0:      
         
-        titles = [job_card_title.find('span').text for job_card_title in job_card_titles]
-        
+        titles = [job_card_title.find('span').text for job_card_title in job_card_titles]       
         companies = [job_card_company.find('span').text for job_card_company in job_card_companies]
-        
         locations = [job_card_location.text for job_card_location in job_card_locations]
-        
         salaries = [job_card_salary.text for job_card_salary in job_card_salaries]
-        
         dates = [job_card_date.text for job_card_date in job_card_dates]
         
         job_attributes = [titles, companies, locations, salaries, dates]
